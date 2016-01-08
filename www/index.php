@@ -121,7 +121,7 @@ echo "<hr/>".getAverage (array("first" => 12, "sec"=> 45, "third"=> 23, "forth"=
   }
  
 
-//Scape
+//Scope
 	$x = 12;
 	echo "<hr/>Variable x = $x <br/>";
 	$x = 10;
@@ -149,3 +149,5 @@ echo "<hr/>".getAverage (array("first" => 12, "sec"=> 45, "third"=> 23, "forth"=
 	}
 	
 ?>
+b45yu456u54j5u
+4y45yy4y5745yh45
