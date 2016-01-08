@@ -120,4 +120,32 @@ echo "<hr/>".getAverage (array("first" => 12, "sec"=> 45, "third"=> 23, "forth"=
 	echo "<br/>";
   }
  
+
+//Scape
+	$x = 12;
+	echo "<hr/>Variable x = $x <br/>";
+	$x = 10;
+	echo "Variable x = $x <br/>";
+	//Local variable
+
+	function test(){
+		//$GLOBALS["x"]+=7; - это глобальная переменная
+		global $x; // This is also global variable. It is suspresion
+		$x += 10; //Локальная переменная
+		echo "Variabke x = $x<br/>";
+	}
+	
+	test();
+	echo "Varable x = $x <br/>";
+	
+	function test_2 (){
+		static $id; //Help to remember new variable
+		$id++;
+		echo "$id<br/>";
+	}
+			
+	for ($i = 0; $i < 10; $i++){
+		test_2 ();
+	}
+	
 ?>
