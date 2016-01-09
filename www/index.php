@@ -1,6 +1,6 @@
 <?php
 	$title = "Home page";
-	require "header.php";
+	include "Header.php"; //Include  продолжает выполнять действия если даже не нашел файл
 	echo "Body of the document";
-	require "footer.php";
+	include "footer.php";
 ?>
