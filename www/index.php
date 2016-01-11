@@ -1,33 +1,26 @@
 <?php
+
+	//Проверка переменной, ее удаление, проверка на введеную информацию, либо на тип данных
+	$x = 12;
 	
-	$name = $_POST["name"];
-	$done = $_POST ["done"];
-	
-	if (isset($done)){//Спрашивает сработала ли кнопка Submit
-		if ($name == "")
-			echo "Please insert anything <a href = '/'> Redo</a>";
-		else
-			header ("Location: index.php");//Перенаправляет на страницы формы. В данном случае не нужна
+	if(	isset ($x)){
+	 echo "The variale is here";
+	echo "<br/>";
 	}
-?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title> Form</title>
-</head>
-
-<body>
-	<form  name="test" action = "" method = "post">
-		 <label> Name: </label> <br/>
-		 <input type = "text" name = "name" placeholder="Name" /><br/>
-		 <label> Email: </label> <br/>
-		 <input type = "text" name = "email" placeholder="mih.lars@mail.ru" /><br/>
-		 <label> Massage: </label> <br/>
-		 <textarea name = "message" cols="40" rows="5"></textarea><br/>
-		 <br/>
-		 <input type="submit" name="done" value="Ready"/>
-	</form>
+	else echo "The variable is not here";
+	unset ($x);
+	echo "The variale is not here";
+	echo "<br/>";
+	$x = "15.2";
 	
+	echo "Is numeric -".is_numeric($x)."<br/>"; // Проверяет содержит ли переменная цифры (выше хотя она строковая она содержит цифры)
+	echo "Is Intager -".is_integer($x)."<br/>"; // Проверяет относится ли переменная к типу целые числа (нет она введена через двойные кавычки она не является строковой)
+	echo "Is Double -".is_double($x)."<br/>";// Проверит относится ли переменная к типу двойных с запитой
+	echo "Is String -".is_string($x)."<br/>";// Проверит относится ли переменная к типу строковых
+	echo "Is Boolean -".is_bool($x)."<br/>";// Проверит относится ли переменная к Логическим
+	echo "Is Scalar -".is_scalar($x)."<br/>";// Проверит относится ли переменная к Скалярным (не массивам)
+	echo "Is Null -".is_scalar($x)."<br/>";// Проверит заложено ли что-нибудь в переменную , например "$null";
+	echo "Is Array -".is_array($x)."<br/>";
+	echo "Type - ".gettype($x)."<br/>";
 
-</body>
-</html>
+?>
