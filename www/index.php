@@ -1,44 +1,19 @@
 <?php
-
-	//Функции для массивов
-   $array = array (12, 17, 5, 23, 56);
-   echo count($array)."<br/>";
-   sort ($array); 
-   print_r($array); //.Функция для разработчиков
-   echo "<br/>";
-   rsort ($array);
-   print_r($array); 
-   echo "<br/>";
-   
-   asort ($array); // asort () сортирует значения массивов и привязывает ключи
-   print_r($array); 
-   echo "<br/>";
-   arsort ($array);
-   print_r($array); 
-   echo "<br/>";
+	$start = microtime (true);
+	echo time ()."<br/>";//Секунды с начала создания Unix 1970
 	
-	ksort ($array); // ksort () сортирует значения массивов по ключам
-   print_r($array); 
-   echo "<br/>";
-   krsort ($array);
-   print_r($array); 
-   echo "<br/>";
-   
-   shuffle ($array);//Перемешивает элементы массива
-   print_r ($array);
-   echo "<br/>";
-   
-   echo in_array(23, $array); // Ищет в массиве элемент. Если существует вывводит true или 1
-   echo "<br/>";
-   
-   $arr_1 = array (12, 123, 64);
-   $arr_2 = array (32, 43, 435);
-   
-   $arr_3 = array_merge ($arr_1, $arr_2); //Объединение в один массив
-   print_r ($arr_3);
-   echo "<br/>";
-   
-   $arrDone = array (1, 2, 3, 4, 5, 6, 7, 8,);
-  $arrDone = array_slice ($arrDone, 1, -2); // Аналог strsub(), только с массивом. Здесь первый элемент откидываем и с конца два
-   print_r ($arrDone);
+	echo microtime(true)."<br/>";//Мили секунды
+	
+	echo "Time of script".(microtime(true)-$start)."seconds";//Здесь секунд в -5 степени
+	
+	$time = mktime (12, 35, 23, 12, 7, 2007);//часы, секунды, месяц, день и год
+	
+	echo "<br/>".date (" Y-m-d  H:i:s", $time); // Дата чтобы даты коректно отражались на русском нужено будет сделать массив реплейс Janiary - Январь
+	//Без $time 
+	
+	$array = getdate ($time); // Переводит в массив
+	echo "<br/>";
+	print_r($array);
+	echo "<br/>".checkdate(2, 28, 2012);
+	
 ?>
