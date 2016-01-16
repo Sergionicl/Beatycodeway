@@ -1,19 +1,32 @@
 <?php
-	$start = microtime (true);
-	echo time ()."<br/>";//Секунды с начала создания Unix 1970
+	//Работа с файлами
+	/*
+	$file = fopen ("a.txt", "a+t"); // Если нет создает файл и записывае в конце
+	fwrite ($file, "Example\nText\nNext");
+	fclose ($file);
+	 * 
+	 */
+	$file = fopen ("a.txt", "r+t");//Чтение и запись, без плюса просто чтение. "t" для считывания таких символов как"\n"
+	while (!feof($file)){
+	echo fread ($file, 2)."<br/>"; //Выводится посимвольно
+	}
 	
-	echo microtime(true)."<br/>";//Мили секунды
+	fseek ($file,0); //Перестановка курсора без него не получится читать так как курсор после выполнения вышеуказанных курсор находится в конце
+	echo fread ($file,1);
+	fclose ($file);
+	echo "<hr/>";
 	
-	echo "Time of script".(microtime(true)-$start)."seconds";//Здесь секунд в -5 степени
-	
-	$time = mktime (12, 35, 23, 12, 7, 2007);//часы, секунды, месяц, день и год
-	
-	echo "<br/>".date (" Y-m-d  H:i:s", $time); // Дата чтобы даты коректно отражались на русском нужено будет сделать массив реплейс Janiary - Январь
-	//Без $time 
-	
-	$array = getdate ($time); // Переводит в массив
-	echo "<br/>";
-	print_r($array);
-	echo "<br/>".checkdate(2, 28, 2012);
-	
+	/*file_put_contents ("c.txt", "TEST test Test");//Упрощенный вариант работы с файлами. Включает в себя ряд действий
+	echo file_get_contents("c.txt")."<br/>"; Почему-то не работает
+	 * 
+	 */
+	echo file_exists ("a.txt")."<br/>";
+	echo filesize ("a.txt")."<br/>";
+	/*
+	rename ("a.txt", "b.txt"); Переименовывает один файл в другой
+	 * 
+	 */
+	 /* unlink ("b.txt"); Удаляет файл из сервера. 
+	  * 
+	  */
 ?>
