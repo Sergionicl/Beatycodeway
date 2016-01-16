@@ -1,6 +1,8 @@
 <?php
-	echo $_SERVER["REMOTE_ADDR"];//IP адрес пользователя
-	echo "<br/>";
-	phpinfo (); // Важная информация. Можно искать через поиск. На что обратить внимание max_execution_time, html_errors
+	//Создание редиректа
+	header("Location: http://google.com"); //не только делает редирект
+	exit; //Вышло и не будет выполняться ниже код
 	
+	$abc = 67;
+	echo $abc++;
 ?>
